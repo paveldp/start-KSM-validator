@@ -14,7 +14,7 @@ rustup target add wasm32-unknown-unknown   \
 git clone https://github.com/paritytech/polkadot-sdk.git\
 cd polkadot-sdk/polkadot\
 git tag -l | sort -V\
-git checkout polkadot-v1.4.0\
+git checkout v1.4.0\
 cargo build --release\
 
  sudo nano /etc/systemd/system/ksm-validator.service
@@ -22,10 +22,10 @@ cargo build --release\
 [Unit]\
 Description=kusama KSM Validator\
 [Service]\
-User=kusama\
+User=NAME _USER\
 Group=kusama\
-WorkingDirectory=/home/kusama/polkadot-sdk\
-ExecStart=/home/kusama/polkadot-sdk/target/release/polkadot \ \
+WorkingDirectory=/home/NAME _USER/polkadot-sdk\
+ExecStart=/home/NAME _USER/polkadot-sdk/target/release/polkadot \ \
  --validator --database=rocksdb \ \
  --pruning 1000 --chain kusama \ \
  --telemetry-url 'wss://telemetry.polkadot.io/submit/ 1' \ \
